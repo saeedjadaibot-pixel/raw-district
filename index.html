@@ -161,6 +161,35 @@
   footer{padding:40px 0 60px;border-top:1px solid var(--line2)}
   .disc{font-size:11px;color:var(--faint);line-height:1.7;max-width:90ch}
 
+  /* behavioral selling points */
+  .bigpoints{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line2);border:1px solid var(--line2);margin-top:42px}
+  .bigpoint{background:var(--bg);padding:46px 40px}
+  .bigpoint .n{font-family:var(--serif);font-size:clamp(46px,7vw,86px);font-weight:600;color:var(--accent2);line-height:1}
+  .bigpoint .n small{font-size:.32em;color:var(--muted);font-weight:300;letter-spacing:.04em}
+  .bigpoint h4{font-size:18px;font-weight:600;margin:18px 0 11px}
+  .bigpoint p{font-size:14px;color:var(--muted);max-width:44ch}
+  @media(max-width:760px){.bigpoints{grid-template-columns:1fr}}
+  .pull{margin-top:36px;border-left:2px solid var(--accent);padding:8px 0 8px 26px;font-family:var(--serif);font-style:italic;font-size:clamp(18px,2.3vw,27px);line-height:1.36;color:var(--ink);max-width:62ch}
+
+  /* personas accordion */
+  .personas{margin-top:48px;border-top:1px solid var(--line)}
+  .persona{border-bottom:1px solid var(--line)}
+  .persona summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:60px 1fr 26px;gap:22px;align-items:center;padding:30px 0;transition:.2s}
+  .persona summary::-webkit-details-marker{display:none}
+  .persona summary:hover .ptitle{color:var(--accent2)}
+  .persona .pnum{font-family:var(--serif);font-size:28px;color:var(--accent);font-weight:600}
+  .persona .ptitle{font-family:var(--serif);font-size:clamp(19px,2.5vw,28px);font-weight:600;transition:.2s}
+  .persona .pteaser{display:block;font-family:var(--sans);font-size:13px;font-weight:300;color:var(--muted);margin-top:6px}
+  .persona .pbody{display:grid;grid-template-columns:1.35fr 1fr;gap:38px;padding:4px 0 38px 82px}
+  .persona .pbody ul{list-style:none}
+  .persona .pbody li{position:relative;padding-left:21px;margin-bottom:14px;font-size:14.5px;color:#cfcabf;line-height:1.55}
+  .persona .pbody li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;background:var(--accent);border-radius:50%}
+  .persona .pbody li b{color:#fff;font-weight:600}
+  .persona .pimg{border:1px solid var(--line);overflow:hidden;min-height:240px}
+  .persona .pimg img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+  .persona[open] .pimg img{transform:scale(1.04)}
+  @media(max-width:760px){.persona summary{grid-template-columns:36px 1fr 20px;gap:14px}.persona .pbody{grid-template-columns:1fr;padding-left:0;gap:22px}.persona .pimg{min-height:200px}}
+
   /* reveal */
   .rev{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
   .rev.in{opacity:1;transform:none}
@@ -256,6 +285,75 @@
         <img src="assets/aerial-metro.jpg" alt="RAW District at the Metro Red Line">
         <div class="figcap">RAW District at the Red Line — direct pedestrian bridge to the Metro</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY METRO -->
+<section class="pad">
+  <div class="wrap">
+    <div class="eyebrow rev">The guest's-eye view</div>
+    <h2 class="rev">A holiday guest barely<br>sleeps in the apartment.</h2>
+    <p class="lede rev" style="margin-top:20px">On a Dubai trip the home is for sleeping — not for living in. Guests are out at the beach, the malls, the attractions and the events from morning to night. They don't pay for size or a prestige address. They pay for one thing: how fast they can reach everywhere else.</p>
+    <div class="bigpoints rev">
+      <div class="bigpoint">
+        <div class="n">5–7<small> hrs</small></div>
+        <h4>The only time they're actually inside</h4>
+        <p>A vacationer is in the apartment barely long enough to sleep — the rest of the day is spent out exploring the city. The home is just a base, and the best base is the best-connected one.</p>
+      </div>
+      <div class="bigpoint">
+        <div class="n">up to 77%</div>
+        <h4>Choose a stay beside the Metro</h4>
+        <p>A large majority of Dubai's visitors deliberately book within walking distance of a Metro station — wary of how fast taxi fares stack up across a whole trip. Walk-to-Metro is the single most searched-for feature.</p>
+      </div>
+    </div>
+    <p class="pull rev">RAW District answers both — a two-minute covered bridge straight onto the Red Line. It is the exact home this majority is already searching for, which means higher occupancy and a stronger nightly rate for you.</p>
+  </div>
+</section>
+
+<!-- PERSONAS -->
+<section class="pad" style="background:var(--bg2);border-top:1px solid var(--line2);border-bottom:1px solid var(--line2)">
+  <div class="wrap">
+    <div class="eyebrow rev">Who fills your calendar</div>
+    <h2 class="rev">Three guests. One apartment.<br>Fifty-two weeks a year.</h2>
+    <p class="lede rev" style="margin-top:20px">Press each one to see exactly who is booking your home — and why this corridor keeps it full when single-purpose areas sit empty.</p>
+    <div class="personas rev">
+      <details class="persona" open>
+        <summary><span class="pnum">01</span><span class="ptitle">The beach &amp; leisure tourist<span class="pteaser">Here for Palm Jebel Ali and Dubai's new west coast</span></span><span class="plus"></span></summary>
+        <div class="pbody">
+          <ul>
+            <li><b>Palm Jebel Ali</b> rises 10 minutes away — twice the size of Palm Jumeirah, adding <b>more than 90km of new coastline</b> and set to become Dubai's largest beach destination, with 80+ beach resorts and hotels.</li>
+            <li>A <b>world-class entertainment landmark</b> — one of the most talked-about attractions coming to the entire city — is planned for the <b>crown of the Palm</b>, drawing visitors from across the globe and creating year-round, high-spend tourism on your doorstep.</li>
+            <li>These guests want sun and sea by day and a <b>quick, low-cost ride home</b> by night. From RAW District that's a short hop by car or Metro — they sleep here and spend there.</li>
+            <li>Leisure demand peaks across <b>weekends and the long winter season</b> — precisely when business travel dips, balancing your calendar.</li>
+          </ul>
+          <div class="pimg"><img src="assets/tower-dusk.jpg" alt="Leisure living at RAW District"></div>
+        </div>
+      </details>
+      <details class="persona">
+        <summary><span class="pnum">02</span><span class="ptitle">The exhibition &amp; events visitor<span class="pteaser">Here for Expo City and the Dubai Exhibition Centre</span></span><span class="plus"></span></summary>
+        <div class="pbody">
+          <ul>
+            <li>The <b>Dubai Exhibition Centre</b> at Expo City — 10 minutes away — already hosts mega-events like <b>Gulfood</b> and the <b>World Health Expo</b>, scaling to the region's largest venue with <b>up to 50,000 visitors a day</b> by 2031.</li>
+            <li>Exhibition crowds arrive in <b>waves of thousands</b>, book months ahead, and pay <b>premium nightly rates</b> for the event week — hotels for miles around sell out.</li>
+            <li>They travel light and rely on the <b>Metro</b> to reach the halls car-free — a two-minute bridge from your door is exactly what they search for.</li>
+            <li>Dubai's events calendar runs <b>all year</b>, turning would-be quiet weeks into fully booked ones, again and again.</li>
+          </ul>
+          <div class="pimg"><img src="assets/exterior-bw.jpg" alt="Metro-linked at RAW District"></div>
+        </div>
+      </details>
+      <details class="persona">
+        <summary><span class="pnum">03</span><span class="ptitle">The JAFZA business traveler<span class="pteaser">Here for work at the world's largest free zone</span></span><span class="plus"></span></summary>
+        <div class="pbody">
+          <ul>
+            <li><b>JAFZA &amp; Jebel Ali Port</b> next door host <b>11,000+ companies</b> and roughly <b>144,000 jobs</b>, including <b>100+ Fortune Global 500</b> firms — a permanent engine of corporate travel.</li>
+            <li>Project teams, secondments and visiting clients book <b>mid-week and for longer stays</b> — the steady, reliable income that fills the nights leisure guests leave empty.</li>
+            <li>Companies <b>re-book the same trusted homes</b> again and again, rewarding a quality address beside both the Metro and the free zone.</li>
+            <li>This is the demand that gives the building its rare <b>seven-day occupancy</b> — busy on a Tuesday, not only a Saturday.</li>
+          </ul>
+          <div class="pimg"><img src="assets/clubhouse.jpg" alt="Business stays at RAW District"></div>
+        </div>
+      </details>
     </div>
   </div>
 </section>
@@ -441,6 +539,8 @@ window.addEventListener('scroll',()=>{
 },{passive:true});
 /* CTA clicks */
 document.querySelectorAll('[data-cta]').forEach(a=>a.addEventListener('click',()=>track('clicked '+a.dataset.cta.toUpperCase()+' — wants to talk')));
+/* persona explore */
+document.querySelectorAll('.persona').forEach(d=>d.addEventListener('toggle',()=>{ if(d.open){ const el=d.querySelector('.ptitle'); const t=el?el.childNodes[0].textContent.trim():'persona'; track('explored guest type: '+t); }}));
 /* time on page */
 const t0=Date.now();
 addEventListener('visibilitychange',()=>{ if(document.visibilityState==='hidden'){ const s=Math.round((Date.now()-t0)/1000); if(s>20&&!sessionStorage.getItem('t_time')){sessionStorage.setItem('t_time','1');track('spent '+s+'s reading')} }});
