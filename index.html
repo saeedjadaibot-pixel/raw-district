@@ -94,6 +94,17 @@
   .calc-r .punch{font-family:var(--serif);font-size:clamp(26px,3.4vw,40px);font-weight:600;line-height:1.12;margin-bottom:18px}
   .calc-r .punch .accent{font-style:italic}
   .calc-r p{font-size:14px;color:var(--muted);max-width:36ch}
+  .plan-h{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent2);margin-bottom:14px}
+  .plan{display:flex;flex-direction:column}
+  .prow{display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--line2)}
+  .prow:last-child{border-bottom:none}
+  .pd{font-size:12.5px;color:var(--muted)}
+  .pp{font-size:11px;color:var(--faint);text-align:right;min-width:58px}
+  .pa{font-size:14px;font-weight:500;text-align:right;min-width:92px}
+  .prow:last-child .pa{color:var(--accent2)}
+  .plan-foot{font-size:11.5px;color:var(--faint);margin-top:16px;line-height:1.55}
+  .payoff{margin-top:20px;border:1px solid var(--line);border-left:2px solid var(--accent);padding:18px 24px;font-family:var(--serif);font-style:italic;font-size:clamp(16px,2vw,22px);line-height:1.4;color:var(--ink)}
+  .payoff #c-after{font-style:normal;color:var(--accent2);font-weight:600}
   .note{font-size:11.5px;color:var(--faint);line-height:1.6;margin-top:22px;max-width:75ch}
 
   /* location grid */
@@ -107,6 +118,12 @@
   .demand h4{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:7px;display:flex;align-items:center;gap:9px}
   .demand h4 .dot{width:6px;height:6px;background:var(--accent);border-radius:50%;flex:none}
   .demand p{font-size:13px;color:var(--muted)}
+  .proof{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:60px;padding-top:48px;border-top:1px solid var(--line)}
+  .proofitem{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start}
+  .proofitem .pn{font-family:var(--serif);font-size:clamp(40px,5vw,66px);font-weight:600;color:var(--accent);line-height:.85}
+  .proofitem .pt{font-size:14.5px;color:#cfcabf;line-height:1.55}
+  .proofitem .pt b{color:#fff;font-weight:600}
+  @media(max-width:760px){.proof{grid-template-columns:1fr;gap:32px}}
 
   /* timeline */
   .tl{position:relative;margin-top:60px;border-left:1px solid var(--line);padding-left:0}
@@ -219,7 +236,7 @@
       <h1>The asset that<br>pays for itself.</h1>
       <div class="sub">RAW District by Imtiaz · Sheikh Zayed Road, Downtown Jebel Ali</div>
       <div class="meta">
-        <span>Freehold</span><span>Handover Q1 2029</span><span>Fully Furnished</span><span>2 min to Metro</span>
+        <span>Freehold</span><span>Handover Q1 2029</span><span>Fully Furnished</span><span>Direct Metro link</span>
       </div>
     </div>
   </div>
@@ -234,9 +251,9 @@
       Buy on the post-handover plan. Pay <b>60% by handover</b>, then let the home's short-term rental income carry most of the remaining <b>40%</b>. When the plan is paid, you own a freehold address on Sheikh Zayed Road outright, with the rent flowing to you, <b>tax-free</b>.
     </p>
     <div class="stats rev">
-      <div class="stat"><div class="n">2 min</div><div class="t">Walk to the Dubai Metro Red Line by a dedicated pedestrian bridge</div></div>
+      <div class="stat"><div class="n">Direct</div><div class="t">Covered connection straight onto the Dubai Metro Red Line — about a one-minute walk</div></div>
       <div class="stat"><div class="n">144,000</div><div class="t">Jobs at JAFZA next door — a built-in, year-round corporate guest base</div></div>
-      <div class="stat"><div class="n">7–8%</div><div class="t">Typical net rental yield — comfortably above a standard lease</div></div>
+      <div class="stat"><div class="n">~12%</div><div class="t">Net rental yield on the 60% paid in by handover — the rest is funded by the rent itself</div></div>
       <div class="stat"><div class="n">0%</div><div class="t">Tax on your rental income — you keep every dirham the property earns</div></div>
     </div>
   </div>
@@ -265,10 +282,12 @@
         <div class="row big-out"><span class="k">Your true monthly contribution during payoff</span><span class="v" id="c-oop"></span></div>
       </div>
       <div class="calc-r">
-        <div class="punch">Then from month&nbsp;37, it pays <span class="accent">you</span> <span id="c-after"></span> a month — tax-free.</div>
-        <p>Once the 40% is cleared you own the apartment outright. From that point the rent, and any capital appreciation, is entirely yours.</p>
+        <div class="plan-h">Payment plan · 60/40 post-handover</div>
+        <div class="plan" id="plan"></div>
+        <div class="plan-foot">The 20% + fees start it. Everything up to handover totals 60%; the 40% after handover is carried largely by rental income (left).</div>
       </div>
     </div>
+    <div class="payoff rev">From month 37 the plan is clear — you own the apartment outright, and the rent (about <span id="c-after"></span>/month after costs) becomes pure income, tax-free.</div>
     <p class="note">*Illustrative, gross unless stated. Short-term rental modelled at roughly <span id="c-adr"></span>/night average at ~70% occupancy, in line with current Dubai holiday-home performance. Net shown after ~40% operating costs (management, service charge, DTCM permit, utilities). Rental covers the majority of each installment, leaving a modest monthly top-up while you build equity in a freehold asset. Figures are not a guarantee of return and depend on the final unit, fit-out and market conditions at handover.</p>
   </div>
 </section>
@@ -282,7 +301,7 @@
         <h2>A rare seven-day<br>demand profile.</h2>
         <p class="lede" style="margin-top:20px">Short-term returns live or die on occupancy. This address is unusual: it draws <span class="serif-it accent">corporate</span> stays through the week and <span class="serif-it accent">leisure &amp; transit</span> demand at the weekend — keeping the home full all year, where pure-leisure areas sit empty mid-week.</p>
         <div class="demand">
-          <div><h4><span class="dot"></span>Two minutes to the Metro</h4><p>A dedicated bridge to the Red Line. Car-free access is exactly what short-stay guests want — and metro-adjacent homes command 10–20% higher rents.</p></div>
+          <div><h4><span class="dot"></span>A direct line to the Metro</h4><p>A covered connection links you straight onto the Red Line — about a one-minute walk. Car-free access is exactly what short-stay guests want, and Metro-connected homes consistently command higher rents.</p></div>
           <div><h4><span class="dot"></span>A built-in corporate base</h4><p>JAFZA next door hosts 11,000+ companies and ~144,000 jobs, including 100+ Fortune Global 500 firms. Constant business travel fills the mid-week nights.</p></div>
           <div><h4><span class="dot"></span>DP World &amp; Jebel Ali Port</h4><p>The region's busiest port and its global trade ecosystem bring a steady flow of visiting clients, contractors and crews needing flexible stays.</p></div>
           <div><h4><span class="dot"></span>RAW Stay, in-house</h4><p>Imtiaz runs its own serviced-apartment operation inside the development — professional hospitality on site, not a third party across town.</p></div>
@@ -290,8 +309,12 @@
       </div>
       <div class="figure rev" style="height:560px">
         <img src="assets/aerial-metro.jpg" alt="RAW District at the Metro Red Line">
-        <div class="figcap">RAW District at the Red Line — direct pedestrian bridge to the Metro</div>
+        <div class="figcap">RAW District at the Red Line — direct connection to the Metro</div>
       </div>
+    </div>
+    <div class="proof rev">
+      <div class="proofitem"><div class="pn">17</div><div class="pt">Up to <b>17 buildings</b> already plug <b>directly into this Metro line</b> — proven performers returning their owners <b>as much as 14% ROI</b>. RAW District joins them, brand new and purpose-built to let.</div></div>
+      <div class="proofitem"><div class="pn">35</div><div class="pt">Only <b>35 plots</b> in Downtown Jebel Ali sit <b>directly on Sheikh Zayed Road as freehold</b>, owned by any nationality. The rest are GCC-only leasehold — true freehold on this strip is genuinely rare.</div></div>
     </div>
   </div>
 </section>
@@ -314,7 +337,7 @@
         <p>The large majority of Dubai's visitors deliberately book within walking distance of a Metro station — wary of how fast taxi fares stack up across a whole trip. Walk-to-Metro is the single most searched-for feature.</p>
       </div>
     </div>
-    <p class="pull rev">RAW District answers both — a two-minute covered bridge straight onto the Red Line. It is the exact home this majority is already searching for, which means higher occupancy and a stronger nightly rate for you.</p>
+    <p class="pull rev">RAW District answers both — a direct covered link straight onto the Red Line, about a one-minute walk. It is the exact home this majority is already searching for, which means higher occupancy and a stronger nightly rate for you.</p>
   </div>
 </section>
 
@@ -343,7 +366,7 @@
           <ul>
             <li>The <b>Dubai Exhibition Centre</b> at Expo City — 10 minutes away — already hosts mega-events like <b>Gulfood</b> and the <b>World Health Expo</b>, scaling to the region's largest venue with <b>up to 50,000 visitors a day</b> by 2031.</li>
             <li>Exhibition crowds arrive in <b>waves of thousands</b>, book months ahead, and pay <b>premium nightly rates</b> for the event week — hotels for miles around sell out.</li>
-            <li>They travel light and rely on the <b>Metro</b> to reach the halls car-free — a two-minute bridge from your door is exactly what they search for.</li>
+            <li>They travel light and rely on the <b>Metro</b> to reach the halls car-free — a direct connection from your door is exactly what they search for.</li>
             <li>Dubai's events calendar runs <b>all year</b>, turning would-be quiet weeks into fully booked ones, again and again.</li>
           </ul>
           <div class="pimg"><img src="assets/exterior-bw.jpg" alt="Metro-linked at RAW District"></div>
@@ -487,6 +510,22 @@ const UNITS = {
   twobed:{label:'2 Bedroom', price:1400000, size:'1,054 sq ft', hand:840000, inst:15556, gross:14904, net:8942, oop:6614, after:8942, adr:700}
 };
 const aed = n => 'AED ' + n.toLocaleString('en-US');
+/* 60/40 post-handover schedule (per Imtiaz factsheet) */
+const SCHEDULE = [
+  {d:'On booking',            n:'20% + 4% DLD', p:0.20},
+  {d:'Oct 2026',              n:'5%',  p:0.05},
+  {d:'Mar 2027',              n:'10%', p:0.10},
+  {d:'Jul 2027',              n:'5%',  p:0.05},
+  {d:'Dec 2027',              n:'10%', p:0.10},
+  {d:'Apr 2028',              n:'5%',  p:0.05},
+  {d:'Completion · Q1 2029',  n:'5%',  p:0.05},
+  {d:'Post-handover · 3 yrs', n:'40% · 3.3%/qtr', p:0.40}
+];
+function renderPlan(price){
+  document.getElementById('plan').innerHTML = SCHEDULE.map(function(s){
+    return '<div class="prow"><span class="pd">'+s.d+'</span><span class="pp">'+s.n+'</span><span class="pa">'+aed(Math.round(price*s.p))+'</span></div>';
+  }).join('');
+}
 function setUnit(key){
   const u = UNITS[key];
   document.getElementById('c-price').textContent = aed(u.price);
@@ -497,6 +536,7 @@ function setUnit(key){
   document.getElementById('c-oop').textContent   = aed(u.oop) + ' /mo';
   document.getElementById('c-after').textContent = aed(u.after);
   document.getElementById('c-adr').textContent   = aed(u.adr);
+  renderPlan(u.price);
   document.querySelectorAll('#toggle button').forEach(b=>b.classList.toggle('on', b.dataset.u===key));
 }
 document.querySelectorAll('#toggle button').forEach(b=>{
