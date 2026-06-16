@@ -558,7 +558,7 @@ if(new URLSearchParams(location.search).has('preview')){
    1) EMAIL + log  → Google Apps Script web-app URL (set TRACK_URL below). Fires an
       email to your inbox and appends a row to a Google Sheet on every open.
    2) Instant push → ntfy.sh topic (subscribe in the ntfy phone app). */
-const TRACK_URL  = 'https://script.google.com/macros/s/REPLACE_WITH_YOUR_APPS_SCRIPT_EXEC_URL/exec';
+const TRACK_URL  = 'https://script.google.com/macros/s/AKfycbwgSgC_3oNfc7mfj3wR5lr0ke2M7oN1YXjgoKNGpbyqgdezR6zt1lB8kIaVweHEOK4zeg/exec';
 const NTFY_TOPIC = 'rawdistrict-psi-x7k9m2q4';
 const QS = new URLSearchParams(location.search);
 const CLIENT = (QS.get('c') || 'Emran').replace(/[^a-zA-Z0-9 _-]/g,'').slice(0,40);
