@@ -49,8 +49,12 @@
   .hero-bg{position:absolute;inset:0;background:url('assets/hero.jpg') center/cover;}
   .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,.55) 0%,rgba(11,11,12,.2) 35%,rgba(11,11,12,.85) 100%)}
   .hero-inner{position:relative;z-index:2;width:100%;padding-bottom:64px}
-  .hero h1{font-size:clamp(44px,8.5vw,104px);margin:18px 0 22px;letter-spacing:-.02em}
+  .hero h1{font-size:clamp(36px,6vw,72px);margin:14px 0 18px;letter-spacing:-.02em;font-weight:500}
   .hero .sub{font-size:clamp(14px,1.6vw,17px);color:var(--accent2);letter-spacing:.04em;font-weight:400}
+  .prepared{margin:18px 0 4px}
+  .prepared .plabel{display:block;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-bottom:9px}
+  .prepared .pname{font-family:var(--serif);font-size:clamp(21px,2.7vw,32px);font-weight:500;color:#fff}
+  .prepared .pname::after{content:"";display:block;width:46px;height:2px;background:var(--accent);margin-top:16px}
   .hero .meta{margin-top:34px;display:flex;gap:28px;flex-wrap:wrap;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
   .scrollcue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:3;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);animation:bob 2.4s ease-in-out infinite}
   @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
@@ -207,7 +211,11 @@
   <div class="hero-bg"></div>
   <div class="hero-inner">
     <div class="wrap">
-      <div class="eyebrow">Private Investment Note · Prepared for Mr. Ashikur Rahman Emran</div>
+      <div class="eyebrow">Private Investment Note</div>
+      <div class="prepared">
+        <span class="plabel">Prepared exclusively for</span>
+        <span class="pname" id="clientName">Mr. Ashikur Rahman Emran</span>
+      </div>
       <h1>The asset that<br>pays for itself.</h1>
       <div class="sub">RAW District by Imtiaz · Sheikh Zayed Road, Downtown Jebel Ali</div>
       <div class="meta">
@@ -228,7 +236,7 @@
     <div class="stats rev">
       <div class="stat"><div class="n">2 min</div><div class="t">Walk to the Dubai Metro Red Line by a dedicated pedestrian bridge</div></div>
       <div class="stat"><div class="n">144,000</div><div class="t">Jobs at JAFZA next door — a built-in, year-round corporate guest base</div></div>
-      <div class="stat"><div class="n">12–13%</div><div class="t">Projected gross short-term rental yield, well above a standard lease</div></div>
+      <div class="stat"><div class="n">7–8%</div><div class="t">Typical net rental yield — comfortably above a standard lease</div></div>
       <div class="stat"><div class="n">0%</div><div class="t">Tax on your rental income — you keep every dirham the property earns</div></div>
     </div>
   </div>
@@ -253,8 +261,7 @@
         <div class="row"><span class="k">Unit size (from)</span><span class="v" id="c-size"></span></div>
         <div class="row"><span class="k">Paid by handover · 60%</span><span class="v" id="c-hand"></span></div>
         <div class="row hot"><span class="k">Post-handover installment · 40% over 36 months</span><span class="v" id="c-inst"></span></div>
-        <div class="row"><span class="k">Projected rental income — gross / month</span><span class="v" id="c-gross"></span></div>
-        <div class="row hot"><span class="k">Projected rental income — net / month*</span><span class="v" id="c-net"></span></div>
+        <div class="row hot"><span class="k">Rental income after costs · per month*</span><span class="v" id="c-net"></span></div>
         <div class="row big-out"><span class="k">Your true monthly contribution during payoff</span><span class="v" id="c-oop"></span></div>
       </div>
       <div class="calc-r">
@@ -367,11 +374,11 @@
     <div class="tl">
       <div class="tl-item rev">
         <div class="tl-year">2026</div>
-        <div class="tl-body"><h4>Dubai Exhibition Centre opens at Expo City — 10 minutes away</h4><p>The AED 10 billion expansion is already hosting Gulfood and the World Health Expo. It grows into the region's largest purpose-built events venue by 2031 — up to 50,000 visitors a day. Exhibition weeks are when holiday homes charge double.</p></div>
+        <div class="tl-body"><h4>Dubai Exhibition Centre opens at Expo City — 10 minutes away</h4><p>Already hosting global events like Gulfood and the World Health Expo, it is growing into the region's largest events venue. Exhibition weeks fill nearby homes and lift nightly rates.</p></div>
       </div>
       <div class="tl-item rev">
         <div class="tl-year">2027–28</div>
-        <div class="tl-body"><h4>Palm Jebel Ali comes alive — on your doorstep</h4><p>Nakheel has awarded AED 3.5bn in villa contracts with first handovers in this window, and a master plan of 80+ branded hotels and resorts. Dubai's next tourism capital, twice the size of Palm Jumeirah, rises 10 minutes away.</p></div>
+        <div class="tl-body"><h4>Palm Jebel Ali comes alive — on your doorstep</h4><p>Dubai's next great waterfront takes shape — twice the size of Palm Jumeirah, with dozens of beach resorts and hotels. The city's coming tourism capital, ten minutes away.</p></div>
       </div>
       <div class="tl-item you rev">
         <div class="tl-year">Q1 2029</div>
@@ -379,7 +386,7 @@
       </div>
       <div class="tl-item rev">
         <div class="tl-year">2032</div>
-        <div class="tl-body"><h4>Al Maktoum International — the world's largest airport — Phase 1</h4><p>A AED 128bn terminal opens with 150 million passenger capacity, ultimately scaling to 260 million, 25 minutes from your door. Dubai plans to move all operations here within a decade, anchoring demand for the entire western corridor.</p></div>
+        <div class="tl-body"><h4>Al Maktoum International — the world's largest airport — Phase 1</h4><p>The first phase opens twenty-five minutes away, built to move passengers by the hundred million. Dubai plans to move all its flights here over the following decade, anchoring demand across the whole western corridor.</p></div>
       </div>
     </div>
   </div>
@@ -486,7 +493,6 @@ function setUnit(key){
   document.getElementById('c-size').textContent  = u.size;
   document.getElementById('c-hand').textContent  = aed(u.hand);
   document.getElementById('c-inst').textContent  = aed(u.inst) + ' /mo';
-  document.getElementById('c-gross').textContent = aed(u.gross) + ' /mo';
   document.getElementById('c-net').textContent   = aed(u.net) + ' /mo';
   document.getElementById('c-oop').textContent   = aed(u.oop) + ' /mo';
   document.getElementById('c-after').textContent = aed(u.after);
@@ -514,8 +520,15 @@ if(new URLSearchParams(location.search).has('preview')){
    2) Instant push → ntfy.sh topic (subscribe in the ntfy phone app). */
 const TRACK_URL  = 'https://script.google.com/macros/s/REPLACE_WITH_YOUR_APPS_SCRIPT_EXEC_URL/exec';
 const NTFY_TOPIC = 'rawdistrict-psi-x7k9m2q4';
-const CLIENT = (new URLSearchParams(location.search).get('c') || 'Emran').replace(/[^a-zA-Z0-9 _-]/g,'').slice(0,40);
-const PREVIEW = new URLSearchParams(location.search).has('preview');
+const QS = new URLSearchParams(location.search);
+const CLIENT = (QS.get('c') || 'Emran').replace(/[^a-zA-Z0-9 _-]/g,'').slice(0,40);
+const PREVIEW = QS.has('preview');
+/* Personalise the hero per client: pass ?name=Mr.%20Full%20Name in the link.
+   If omitted, the default name baked into the page is used. */
+(function(){
+  var nm = QS.get('name');
+  if(nm){ nm = nm.replace(/[<>]/g,'').slice(0,60); var el=document.getElementById('clientName'); if(el) el.textContent = nm; }
+})();
 function track(msg){
   if(PREVIEW) return;
   /* 1) email + sheet log via Apps Script — image-pixel GET, no CORS */
